@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bahala Na Resort - Luxury Stay & Dining</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+
+    <header>
+        <h1>BAHALA NA RESORT </h1>
+        <nav>
+          
+            <a href="index.html">HOME</a>
+            <a href="ROOM.html">ROOM</a>
+            <a href="FOOD.html">FOOD</a>
+            <a href="SOUVENIR.html">SOUVENIR</a>
+            <a href="OFFERS.html">OFFERS</a>
+            <a href="contacts.html">CONTACT US</a>
+
+        </nav>
+    </header>
+
+    <div class="container">
+
+        <!-- Food Section -->
+        <div class="section">
+            <h2>🍽️ Signature Dishes</h2>
+            <div class="grid">
+                <div class="menu-item">
+                    <img src="Grilled Seafood Platter.jpg" alt="Grilled Seafood Platter">
+                    Grilled Seafood Platter <span class="price">₱1200</span>
+                    <input type="number" id="qty-seafood" min="1" value="1">
+                    <button onclick="addToCart('Grilled Seafood Platter', 1200, 'qty-seafood')">Add</button>
+                </div>
+                <div class="menu-item">
+                    <img src="bbq-ribs.jpg" alt="BBQ Ribs">
+                    Beachside BBQ Ribs <span class="price">₱950</span>
+                    <input type="number" id="qty-ribs" min="1" value="1">
+                    <button onclick="addToCart('Beachside BBQ Ribs', 950, 'qty-ribs')">Add</button>
+                </div>
+                <div class="menu-item">
+                    <img src="tropical-curry.jpg" alt="Tropical Chicken Curry">
+                    Tropical Chicken Curry <span class="price">₱750</span>
+                    <input type="number" id="qty-curry" min="1" value="1">
+                    <button onclick="addToCart('Tropical Chicken Curry', 750, 'qty-curry')">Add</button>
+                </div>
+                <div class="menu-item">
+                    <img src="garlic-butter-shrimp.jpg" alt="Garlic Butter Shrimp">
+                    Garlic Butter Shrimp <span class="price">₱850</span>
+                    <input type="number" id="qty-shrimp" min="1" value="1">
+                    <button onclick="addToCart('Garlic Butter Shrimp', 850, 'qty-shrimp')">Add</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Desserts Section -->
+        <div class="section">
+            <h2>🍰 Desserts</h2>
+            <div class="grid">
+                <div class="menu-item">
+                    <img src="halo-halo.jpg" alt="Halo-Halo Special">
+                    Halo-Halo Special <span class="price">₱350</span>
+                    <input type="number" id="qty-halo" min="1" value="1">
+                    <button onclick="addToCart('Halo-Halo Special', 350, 'qty-halo')">Add</button>
+                </div>
+                <div class="menu-item">
+                    <img src="mango-sticky-rice.jpg" alt="Mango Sticky Rice">
+                    Mango Sticky Rice <span class="price">₱400</span>
+                    <input type="number" id="qty-mango" min="1" value="1">
+                    <button onclick="addToCart('Mango Sticky Rice', 400, 'qty-mango')">Add</button>
+                </div>
+                <div class="menu-item">
+                    <img src="leche-flan.jpg" alt="Leche Flan">
+                    Classic Leche Flan <span class="price">₱300</span>
+                    <input type="number" id="qty-flan" min="1" value="1">
+                    <button onclick="addToCart('Classic Leche Flan', 300, 'qty-flan')">Add</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Drinks Section -->
+        <div class="section">
+            <h2>🍹 Beverages</h2>
+            <div class="grid">
+                <div class="menu-item">
+                    <img src="mango-shake.jpg" alt="Mango Shake">
+                    Fresh Mango Shake <span class="price">₱250</span>
+                    <input type="number" id="qty-mango-shake" min="1" value="1">
+                    <button onclick="addToCart('Fresh Mango Shake', 250, 'qty-mango-shake')">Add</button>
+                </div>
+                <div class="menu-item">
+                    <img src="coconut-juice.jpg" alt="Coconut Juice">
+                    Buko (Coconut) Juice <span class="price">₱200</span>
+                    <input type="number" id="qty-coconut" min="1" value="1">
+                    <button onclick="addToCart('Buko Juice', 200, 'qty-coconut')">Add</button>
+                </div>
+                <div class="menu-item">
+                    <img src="lemonade.jpg" alt="Iced Cucumber Lemonade">
+                    Iced Cucumber Lemonade <span class="price">₱220</span>
+                    <input type="number" id="qty-lemonade" min="1" value="1">
+                    <button onclick="addToCart('Iced Cucumber Lemonade', 220, 'qty-lemonade')">Add</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Order Summary Section -->
+        <div class="section">
+            <h2>🛒 Your Order</h2>
+            <div id="cart"></div>
+            <p><strong>Total: ₱<span id="total-price">0</span></strong></p>
+        
+            <!-- Room Number Input -->
+        
+            <!-- Checkout & Clear Cart Buttons -->
+            <div class="button-container">
+                <label for="room-number">Room Number:</label>
+            <input type="text" id="room-number" placeholder="Enter your room number" required>
+                <button id="checkout-btn" onclick="checkout()">Checkout</button>
+                <button id="clear-cart-btn" onclick="clearCart()">Clear Cart</button>
+            </div>
+        </div>
+
+    <script>
+        let cart = [];
+        let totalPrice = 0;
+
+        function addToCart(item, price, quantityInputId) {
+            let quantity = parseInt(document.getElementById(quantityInputId).value);
+            if (quantity < 1) {
+                alert("Please select at least one item.");
+                return;
+            }
+
+            let existingItem = cart.find(cartItem => cartItem.item === item);
+            if (existingItem) {
+                existingItem.quantity += quantity;
+                existingItem.totalPrice += price * quantity;
+            } else {
+                cart.push({ item, price, quantity, totalPrice: price * quantity });
+            }
+
+            totalPrice += price * quantity;
+            updateCart();
+        }
+
+        function updateCart() {
+            let cartHTML = "";
+            cart.forEach((food, index) => {
+                cartHTML += `
+                    <p>
+                        ${food.item} (x${food.quantity}) - ₱${food.totalPrice}
+                        <button onclick="removeFromCart(${index})">❌</button>
+                    </p>
+                `;
+            });
+            document.getElementById("cart").innerHTML = cartHTML;
+            document.getElementById("total-price").innerText = totalPrice;
+        }
+
+        function removeFromCart(index) {
+            totalPrice -= cart[index].totalPrice;
+            cart.splice(index, 1);
+            updateCart();
+        }
+
+        function checkout() {
+            let roomNumber = document.getElementById("room-number").value.trim();
+            if (cart.length === 0) {
+                alert("Your cart is empty.");
+                return;
+            }
+            if (!roomNumber) {
+                alert("Enter your room number for delivery.");
+                return;
+            }
+            alert(`Thank you! Your order has been placed.\nTotal: ₱${totalPrice}\nRoom: ${roomNumber}`);
+            clearCart();
+        }
+
+        function clearCart() {
+            cart = [];
+            totalPrice = 0;
+            document.getElementById("room-number").value = "";
+            updateCart();
+        }
+    </script>
+
+</body>
+</html>

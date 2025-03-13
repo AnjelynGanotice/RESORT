@@ -1,0 +1,253 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f5f5f5;
+    color: #333;
+}
+
+/* Header */
+header {
+    background: hsl(0, 0%, 100%);
+    color: #282320; /* Soft brown for better contrast */
+    padding: 10px 20px; /* Reduced padding for a slimmer look */
+    text-align: center;
+    font-size: 1rem; /* Smaller but still readable */
+    font-weight: 500; /* Slightly lighter for a subtle feel */
+    font-family: Garamond;/* Ensures font fallback */
+    letter-spacing: 0.5px; /* More refined spacing */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Softer shadow for a sleek design */
+
+    border-radius: 0 0 5px 5px; /* Slight rounding for a gentle touch */
+    transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Subtle hover effect */
+header:hover {
+    background: #f9f9f9; /* Slightly off-white for variation */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+nav {
+    padding: 10px 0; /* Adds slight padding for structure */
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+nav a {
+    color: #615a55;
+    text-decoration: none;
+    margin: 0 16px; /* Balanced spacing */
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    padding: 8px 12px; /* Adds padding for better clickability */
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+nav a:hover {
+    color: #fff; /* White text for better contrast */
+    background: #615a55; /* Soft caramel highlight */
+    text-decoration: none;
+    transform: translateY(-2px); /* Subtle hover lift effect */
+}
+
+/* Main Container */
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: rgb(113, 109, 94);
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Sections */
+.section {
+    background: #efebe1;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+.section h2 {
+    color: #3a3a39;
+}
+
+/* Grid Layout for Menu Items */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 10px;
+}
+
+/* Menu Items */
+.menu-item {
+    background: #fdf7e4;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.menu-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.menu-item{
+    animation: fadeIn 1.5s ease-in-out;
+}
+/* Price Styling */
+.price {
+    display: block;
+    font-size: 0.9rem;
+    color: #726e54;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+/* Input Fields */
+input[type="number"], input[type="text"] {
+    width: 60px;
+    padding: 5px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #b8b8a7;
+    text-align: center;
+}
+
+/* Buttons */
+button {
+    margin-top: 10px;
+    padding: 10px;
+    background: #4a443b;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+button:hover {
+    background: #726e54;
+}
+
+/* Order Summary */
+#cart {
+    text-align: left;
+    background: #fdf7e4;
+    padding: 15px;
+    border-radius: 8px;
+    min-height: 50px;
+}
+#cart p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    margin: 5px 0;
+}
+/* Remove (❌) Button */
+#cart button {
+    background: rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+    padding: 6px 12px;
+    font-size: 16px; /* Increased size */
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+#cart button:hover {
+    background: rgb(117, 42, 42);
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+
+/* Total Price */
+#total-price {
+    font-size: 1.5rem;
+    color: #4a443b;
+}
+
+/* Room Number Input */
+input[type="text"] {
+    padding: 10px;
+    width: 80%;
+    max-width: 300px;
+    border: 1px solid #b8b8a7;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* Checkout & Clear Cart Buttons */
+#checkout-btn, #clear-cart-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+#checkout-btn {
+    background: green;
+}
+#checkout-btn:hover {
+    background: darkgreen;
+}
+#clear-cart-btn {
+    background: red;
+}
+#clear-cart-btn:hover {
+    background: darkred;
+}
+
+/* Call to Action Button */
+.cta {
+    display: block;
+    text-align: center;
+    margin: 20px auto;
+    padding: 10px 18px;
+    background:  #363531;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    border: 1px solid #7e7564;
+    transition: 0.3s;
+    width: 200px;
+}
+.cta:hover {
+    transform: scale(1.05);
+    background: #363531;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+    input[type="text"], input[type="number"] {
+        width: 100%;
+    }
+    button {
+        width: 100%;
+    }
+}

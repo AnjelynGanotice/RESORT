@@ -1,0 +1,150 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f5f5f5;
+    color: #333;
+}
+header {
+    background: hsl(0, 0%, 100%);
+    color: #282320; /* Soft brown for better contrast */
+    padding: 10px 20px; /* Reduced padding for a slimmer look */
+    text-align: center;
+    font-size: 1rem; /* Smaller but still readable */
+    font-weight: 500; /* Slightly lighter for a subtle feel */
+    font-family: Garamond;/* Ensures font fallback */
+    letter-spacing: 0.5px; /* More refined spacing */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Softer shadow for a sleek design */
+
+    border-radius: 0 0 5px 5px; /* Slight rounding for a gentle touch */
+    transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Subtle hover effect */
+header:hover {
+    background: #f9f9f9; /* Slightly off-white for variation */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+nav {
+    padding: 10px 0; /* Adds slight padding for structure */
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+nav a {
+    color: #615a55;
+    text-decoration: none;
+    margin: 0 16px; /* Balanced spacing */
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    padding: 8px 12px; /* Adds padding for better clickability */
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+nav a:hover {
+    color: #fff; /* White text for better contrast */
+    background: #615a55; /* Soft caramel highlight */
+    text-decoration: none;
+    transform: translateY(-2px); /* Subtle hover lift effect */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: rgb(113, 109, 94);
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container   {
+    animation: fadeIn 1.5s ease-in-out;
+}
+.section {
+    background: #efebe1;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+.section h2 {
+    color: #3a3a39;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 10px;
+}
+.offer {
+    background: #fdf7e4;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.offer img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+.price {
+    display: block;
+    font-size: 1rem;
+    color: #555350;
+    font-weight: bold;
+    font-style: italic;
+    margin-top: 5px;
+}
+.cta {
+    display: block;
+    text-align: center;
+    margin: 20px auto;
+    padding: 10px 18px;
+    background:  #363531;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    border: 1px solid #7e7564;
+    transition: 0.3s;
+    width: 200px;
+}
+.cta:hover {
+    transform: scale(1.05);
+    background: #363531;
+}
+.avail-now-btn {
+    display: inline-block;
+    padding: 12px 18px;
+    background: #28a745; /* Green color */
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s ease-in-out;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.avail-now-btn:hover {
+    background: #218838; /* Darker green on hover */
+    transform: scale(1.05);
+}

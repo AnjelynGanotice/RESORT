@@ -1,0 +1,165 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 50px;
+    padding: 50px;
+    background: url('bg1.gif') no-repeat center center/cover; 
+    color: #323131;
+}
+
+/* Reservation Section Styling */
+.reservation {
+    background: rgba(255, 255, 255, 0.5); /* Light beige background with 50% transparency */
+    padding: 100px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 20px auto;
+    font-family: 'Arial', sans-serif;
+}
+.reservation h1 {
+    font-size: 3rem;
+    color: #323131;/* Soft brown color */
+    text-align: center;
+    margin-bottom: 15px;
+    font-family: Garamond;
+} 
+
+/* Reservation Header Styling */
+.reservation h2 {
+    font-size: 2rem;
+    color: #323131;/* Soft brown color */
+    text-align: center;
+    margin-bottom: 15px;
+    font-family: Garamond;
+}
+
+/* Reservation Text Styling */
+.reservation p {
+    font-size: 1.1rem;
+    color: #323131;; /* Subtle text color */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Form Styling */
+.reservation form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Label Styling */
+.reservation label {
+    font-weight: bold;
+    color: #323131;
+}
+
+/* Input and Textarea Styling */
+.reservation input,
+.reservation textarea {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+/* Focused Input and Textarea Styling */
+.reservation input:focus,
+.reservation textarea:focus {
+    border-color: #74685d; /* Highlight focus with a soft caramel */
+}
+
+/* Button Styling */
+.reservation button {
+    background-color: #574f41;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: center;
+}
+
+/* Button Hover Effect */
+.reservation button:hover {
+    background-color: #574f41; /* Slightly darker caramel on hover */
+}
+
+/* Phone Info Styling */
+.reservation .phone-info {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #5a3e2b;
+    margin-top: 20px;
+}
+
+/* Phone Info Strong Styling */
+.reservation .phone-info strong {
+    font-size: 1.2rem;
+}
+/* Confirmation Button Styling */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #45413e; /* Soft caramel color */
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #a88b5e; /* Slightly darker caramel on hover */
+    transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+.btn:active {
+    background-color: #8b6c4f; /* Darker caramel when clicked */
+    transform: scale(1); /* Reset scale effect on click */
+}
+
+.btn:focus {
+    outline: none;
+    border: 2px solid #d2a679; /* Soft caramel border when focused */
+}
+#confirmation-message {
+    background: rgba(255, 255, 255, 0.8); /* Light background for the confirmation message */
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    margin: 50px auto;
+}
+
+#confirmation-message h2 {
+    font-size: 2.5rem;
+    color: #323131;
+}
+
+#confirmation-message p {
+    font-size: 1.2rem;
+    color: #323131;
+}
+
+#confirmation-message a {
+    background-color: #615149; /* Slightly darker caramel on hover */
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+#confirmation-message a:hover {
+    background-color: #615149; /* Slightly darker caramel on hover */
+}

@@ -1,0 +1,340 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff; /* Light beige background for a warm feel */
+    color: #474544;
+}
+
+header {
+    background: hsl(0, 0%, 100%);
+    color: #282320; /* Soft brown for better contrast */
+    padding: 10px 20px; /* Reduced padding for a slimmer look */
+    text-align: center;
+    font-size: 1rem; /* Smaller but still readable */
+    font-weight: 500; /* Slightly lighter for a subtle feel */
+    font-family: Garamond;/* Ensures font fallback */
+    letter-spacing: 0.5px; /* More refined spacing */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Softer shadow for a sleek design */
+
+    border-radius: 0 0 5px 5px; /* Slight rounding for a gentle touch */
+    transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Subtle hover effect */
+header:hover {
+    background: #f9f9f9; /* Slightly off-white for variation */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+
+
+
+nav {
+    padding: 10px 0; /* Adds slight padding for structure */
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+nav a {
+    color: #615a55;
+    text-decoration: none;
+    margin: 0 16px; /* Balanced spacing */
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    padding: 8px 12px; /* Adds padding for better clickability */
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+nav a:hover {
+    color: #fff; /* White text for better contrast */
+    background: #615a55; /* Soft caramel highlight */
+    text-decoration: none;
+    transform: translateY(-2px); /* Subtle hover lift effect */
+}
+
+
+.hero {
+    background: url('BG.gif') no-repeat center center/cover; /* Luxurious beach resort image */
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    text-align: center;
+    position: relative;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3); /* Gentle overlay for readability */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content h1 {
+    font-size: 3.5em;
+    
+    font-family: 'Arial Narrow', Arial, sans-serif;
+    font-style:inherit;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content p {
+    font-size: 1.4em;
+    margin: 15px 0;
+}
+
+.btn {
+    display: inline-block;
+    background: linear-gradient(135deg, rgb(108, 95, 76), #6a665b); /* Gradient for elegant look */
+    color: #fff;
+    padding: 14px 40px;
+    border: none;
+    border-radius: 50px; /* More rounded shape */
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+.book-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #ffcc99, #d2a679);
+    color: #5c4033;
+    padding: 16px 45px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.3em;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.book-btn:hover {
+    background: linear-gradient(135deg, #d2a679, #b88653);
+    transform: scale(1.1);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+}
+
+.container {
+    padding: 30px;
+}
+
+.services {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: 40px 0;
+}
+
+.service {
+    background: #ffffff;
+    
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    padding: 25px;
+    margin: 15px;
+    flex: 1 1 250px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.service:hover {
+    transform: translateY(-8px);
+}
+
+.contact {
+    background: #f8f1e4; /* Light beige background */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 20px auto;
+    font-family: 'Arial', sans-serif;
+}
+
+.contact h2 {
+    font-family: Garamond;
+    font-size: 2rem;
+    color: #5a3e2b; /* Soft brown color */
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.contact p {
+    font-size: 1.1rem;
+    color: #615a55; /* Subtle text color */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact label {
+    font-weight: bold;
+    color: #5a3e2b;
+}
+
+.contact input,
+.contact textarea {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+    border-color: #d2a679; /* Highlight focus with a soft caramel */
+}
+
+.contact button {
+    background-color: #d2a679;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: center;
+}
+
+.contact button:hover {
+    background-color: #a88b5e; /* Slightly darker caramel on hover */
+}
+
+.contact .phone-info {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #5a3e2b;
+    margin-top: 20px;
+}
+
+.contact .phone-info strong {
+    font-size: 1.2rem;
+}
+
+footer {
+    background: rgba(255, 255, 255, 0.8);
+    color: #3b3939;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400&display=swap');
+
+.introduction {
+    text-align: center;
+    background-color: #f3e5d8; /* Soft beige background */
+    padding: 60px 20px;
+    border-radius: 15px;
+    margin-bottom: 40px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    border: 2px solid #d2b48c; /* Light brown border */
+    position: relative;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif; /* Modern, clean font */
+}
+
+/* Decorative Elements */
+.introduction::before, .introduction::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: #d2b48c; /* Light brown */
+    border-radius: 50%;
+    opacity: 0.2;
+}
+
+.introduction::before {
+    top: -30px;
+    left: -30px;
+}
+
+.introduction::after {
+    bottom: -30px;
+    right: -30px;
+}
+
+.introduction h2 {
+    font-size: 38px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #8b5e3c; /* Rich brown */
+    margin-bottom: 15px;
+    font-family: 'Playfair Display', serif; /* Elegant serif font */
+}
+
+.introduction p {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+    color: #6b4f3b; /* Warm brown text */
+    font-weight: 400;
+}
+
+/* Subtle Fade-In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.introduction {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.services {
+    display: flex;
+    justify-content: center; /* Centers items */
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.service {
+    width: 280px; /* Ensures all service boxes are the same size */
+    text-align: center;
+}
+
+.service img {
+    width: 100%; /* Makes all images fill the container */
+    height: 200px; /* Ensures all images are the same height */
+    object-fit: cover; /* Crops images to fit properly without stretching */
+    border-radius: 10px;
+}

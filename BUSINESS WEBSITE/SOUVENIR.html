@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bahala Na Resort - Souvenirs</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+
+    <header>
+        <h1>BAHALA NA RESORT </h1>
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="ROOM.html">ROOM</a>
+            <a href="FOOD.html">FOOD</a>
+            <a href="SOUVENIR.html">SOUVENIR</a>
+            <a href="OFFERS.html">OFFERS</a>
+            <a href="contacts.html">CONTACT US</a>
+        </nav>
+    </header>
+
+    <div class="container">
+
+        <div class="section">
+            <h2>🛍️ Take Home a Piece of Bahala Na Resort</h2>
+            <p>Bring home special souvenirs to remember your stay at Bahala Na Resort Beach! Limited edition items are available.</p>
+        </div>
+
+        <!-- Souvenir Items -->
+        <div class="section">
+            <h2>🌴 Featured Souvenirs</h2>
+            <div class="grid">
+                <div class="item">
+                    <img src="tshirt.jpg" alt="Bahala Na Resort Shirt">
+                    <p>Bahala Na Resort Shirt <span class="price">₱450</span></p>
+                    <input type="number" id="qty-shirt" min="1" value="1">
+                    <button onclick="addToCart('Bahala Na Resort Shirt', 450, 'qty-shirt')">Add to Cart</button>
+                </div>
+                <div class="item">
+                    <img src="mug.jpg" alt="Customized Resort Mug">
+                    <p>Customized Resort Mug <span class="price">₱300</span></p>
+                    <input type="number" id="qty-mug" min="1" value="1">
+                    <button onclick="addToCart('Customized Resort Mug', 300, 'qty-mug')">Add to Cart</button>
+                </div>
+                <div class="item">
+                    <img src="keychain.jpg" alt="Beach Keychain">
+                    <p>Beach Keychain <span class="price">₱150</span></p>
+                    <input type="number" id="qty-keychain" min="1" value="1">
+                    <button onclick="addToCart('Beach Keychain', 150, 'qty-keychain')">Add to Cart</button>
+                </div>
+                <div class="item">
+                    <img src="accessories.jpg" alt="Bahala Na Resort Cap">
+                    <p>Bahala Na Resort Cap <span class="price">₱350</span></p>
+                    <input type="number" id="qty-cap" min="1" value="1">
+                    <button onclick="addToCart('Bahala Na Resort Cap', 350, 'qty-cap')">Add to Cart</button>
+                </div>
+                <div class="item">
+                    <img src="painting.jpg" alt="Resort Logo Beach Towel">
+                    <p>Resort Logo Beach Towel <span class="price">₱600</span></p>
+                    <input type="number" id="qty-towel" min="1" value="1">
+                    <button onclick="addToCart('Resort Logo Beach Towel', 600, 'qty-towel')">Add to Cart</button>
+                </div>
+                <div class="item">
+                    <img src="tote-bag.jpg" alt="Eco-Friendly Tote Bag">
+                    <p>Eco-Friendly Tote Bag <span class="price">₱500</span></p>
+                    <input type="number" id="qty-tote" min="1" value="1">
+                    <button onclick="addToCart('Eco-Friendly Tote Bag', 500, 'qty-tote')">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Order Summary Section -->
+        <div class="section">
+            <h2>🛒 Your Order</h2>
+            <div id="cart"></div>
+            <p><strong>Total: ₱<span id="total-price">0</span></strong></p>
+
+            <!-- Room Number Input -->
+            <label for="room-number">Room Number:</label>
+            <input type="text" id="room-number" placeholder="Enter your room number" required>
+
+            <button id="checkout-btn" onclick="checkout()">Checkout</button>
+            <button id="clear-cart-btn" onclick="clearCart()">Clear Cart</button>
+        </div>
+
+    </div>
+
+    <script>
+        let cart = [];
+        let totalPrice = 0;
+
+        function addToCart(item, price, quantityInputId) {
+            let quantity = parseInt(document.getElementById(quantityInputId).value);
+            if (quantity < 1) {
+                alert("Please select at least one item.");
+                return;
+            }
+
+            let existingItem = cart.find(cartItem => cartItem.item === item);
+            if (existingItem) {
+                existingItem.quantity += quantity;
+                existingItem.totalPrice += price * quantity;
+            } else {
+                cart.push({ item, price, quantity, totalPrice: price * quantity });
+            }
+
+            totalPrice += price * quantity;
+            updateCart();
+        }
+
+        function updateCart() {
+            let cartHTML = "";
+            cart.forEach((product, index) => {
+                cartHTML += `
+                    <p>
+                        ${product.item} (x${product.quantity}) - ₱${product.totalPrice}
+                        <button class="remove-btn" onclick="removeFromCart(${index})">❌</button>
+                    </p>
+                `;
+            });
+            document.getElementById("cart").innerHTML = cartHTML;
+            document.getElementById("total-price").innerText = totalPrice;
+        }
+
+        function removeFromCart(index) {
+            totalPrice -= cart[index].totalPrice;
+            cart.splice(index, 1);
+            updateCart();
+        }
+
+        function checkout() {
+            let roomNumber = document.getElementById("room-number").value.trim();
+            if (cart.length === 0) {
+                alert("Your cart is empty.");
+                return;
+            }
+            if (!roomNumber) {
+                alert("Enter your room number for delivery.");
+                return;
+            }
+            alert(`Thank you! Your order has been placed.\nTotal: ₱${totalPrice}\nRoom: ${roomNumber}`);
+            clearCart();
+        }
+
+        function clearCart() {
+            cart = [];
+            totalPrice = 0;
+            document.getElementById("room-number").value = "";
+            updateCart();
+        }
+    </script>
+
+</body>
+</html>
